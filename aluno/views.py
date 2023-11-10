@@ -30,6 +30,61 @@ class AlunoDeletar(DeleteView):
     def get(self, request, *args, **kwargs):
         return self.delete(request, *args, **kwargs)
 
+class CursoCriar(CreateView):
+    model = Curso
+    fields = '__all__'
+    template_name = 'curso/form.html'
+    success_url = reverse_lazy('curso_listar')
+
+class CursoListar(ListView):
+    model = Curso
+    template_name = 'curso/cursos.html'
+    context_object_name = 'cursos'
+
+class CursoEditar(UpdateView):
+    model = Curso
+    fields = '__all__'
+    template_name = 'curso/form.html'
+    success_url = reverse_lazy('curso_listar')
+    pk_url_kwarg = 'id'
+
+class CursoDeletar(DeleteView):
+    model = Curso
+    fields = '__all__'
+    success_url = reverse_lazy('curso_listar')
+    pk_url_kwarg = 'id'
+
+    def get(self, request, *args, **kwargs):
+        return self.delete(request, *args, **kwargs)
+
+
+class CidadeCriar(CreateView):
+    model = Cidade
+    fields = '__all__'
+    template_name = 'cidades/form.html'
+    success_url = reverse_lazy('cidade_listar')
+
+class CidadeListar(ListView):
+    model = Cidade
+    template_name = 'cidades/cidades.html'
+    context_object_name = 'cidades'
+
+class CidadeEditar(UpdateView):
+    model = Cidade
+    fields = '__all__'
+    template_name = 'cidades/form.html'
+    success_url = reverse_lazy('cidade_listar')
+    pk_url_kwarg = 'id'
+
+class CidadeDeletar(DeleteView):
+    model = Cidade
+    fields = '__all__'
+    success_url = reverse_lazy('cidade_listar')
+    pk_url_kwarg = 'id'
+
+    def get(self, request, *args, **kwargs):
+        return self.delete(request, *args, **kwargs)
+
 class Index(TemplateView):
     
     template_name = 'aluno/index.html'
