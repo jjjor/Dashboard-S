@@ -20,19 +20,19 @@ from aluno import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.Index.as_view(),name='index'),
-    path('aluno/',views.AlunoCriar.as_view(),name='aluno_criar'),
-    path('aluno/editar/<int:id>/',views.AlunoEditar.as_view(), name='aluno_editar'),
-    path('aluno/remover/<int:id>/',views.AlunoDeletar.as_view(),name='aluno_remover'),
-    path('aluno/listar',views.AlunoListar.as_view(),name='aluno_listar'),
-    path('cidade/listar', views.CidadeListar.as_view(), name='cidade_listar'),
-    path('cidade/criar', views.CidadeCriar.as_view(), name='cidade_criar'),
-    path('cidade/editar/<int:id>/', views.CidadeEditar.as_view(), name='cidade_editar'),
-    path('cidade/deletar/<int:id>/', views.CidadeDeletar.as_view(), name='cidade_deletar'),
-    path('curso/listar', views.CursoListar.as_view(), name='curso_listar'),
-    path('curso/criar', views.CursoCriar.as_view(), name='curso_criar'),
-    path('curso/editar/<int:id>/', views.CursoEditar.as_view(), name='curso_editar'),
-    path('curso/deletar<int:id>/', views.CursoDeletar.as_view(), name='curso_deletar')
+    path('',views.index,name='index'),
+    path('aluno/',views.aluno_criar,name='aluno_criar'),
+    path('aluno/editar/<int:id>/',views.aluno_editar, name='aluno_editar'),
+    path('aluno/remover/<int:id>/',views.aluno_remover,name='aluno_remover'),
+    path('aluno/listar',views.aluno_listar,name='aluno_listar'),
+    path('cidade/listar', views.cidade_listar, name='cidade_listar'),
+    path('cidade/criar', views.cidade_criar, name='cidade_criar'),
+    path('cidade/editar/<int:id>/', views.cidade_editar, name='cidade_editar'),
+    path('cidade/deletar/<int:id>/', views.cidade_deletar, name='cidade_deletar'),
+    path('curso/listar', views.curso_listar, name='curso_listar'),
+    path('curso/criar', views.curso_criar, name='curso_criar'),
+    path('curso/editar/<int:id>/', views.curso_editar, name='curso_editar'),
+    path('curso/deletar<int:id>/', views.curso_deletar, name='curso_deletar')
 
 
 ]
